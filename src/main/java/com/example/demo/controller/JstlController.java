@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/learning/jsp")
-public class CourseJstlController {
+public class JstlController {
 
     @GetMapping("/jstl")
     public String jstl(Model model) {
