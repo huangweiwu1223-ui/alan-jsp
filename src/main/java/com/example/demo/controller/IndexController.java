@@ -26,7 +26,7 @@ public class IndexController {
     @GetMapping("/welcome")
     public String welcome(Model model) {
         // 複製原有首頁所需的屬性
-        List<String> items = Arrays.asList("Spring Boot", "JSP", "JSTL", "EL", "jQuery AJAX");
+        List<String> items = Arrays.asList("lifecycle", "scopes", "el", "scriptlet");
         model.addAttribute("courseName", "JSP 兩日極速實戰");
         model.addAttribute("items", items);
         model.addAttribute("isUserLoggedIn", true);

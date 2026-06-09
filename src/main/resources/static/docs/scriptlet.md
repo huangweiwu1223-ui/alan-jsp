@@ -1,4 +1,4 @@
-# JSP Scriptlet 基礎與語法演進 (Day 1-1.5)
+# JSP Scriptlet 基礎與語法演進 (Day 1-4)
 
 本單元旨在深入理解 JSP 的傳統寫法，雖然在現代開發中已被 EL 與 JSTL 取代，但掌握 Scriptlet 對於維護舊系統與理解 JSP 轉譯成 Servlet 的底層邏輯至關重要。
 
