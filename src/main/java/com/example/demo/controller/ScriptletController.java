@@ -16,6 +16,6 @@ public class ScriptletController {
     public String scriptlet(Model model) {
         List<String> items = Arrays.asList("壽險保單", "意外險", "醫療險", "儲蓄險");
         model.addAttribute("policyList", items);
-        return "learning/scriptlet";
+        return "scriptlet";
     }
 }

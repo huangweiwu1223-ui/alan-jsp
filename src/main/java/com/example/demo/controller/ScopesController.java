@@ -29,6 +29,6 @@ public class ScopesController {
         session.setAttribute("conflictVar", "來自 Session 的衝突變數");
         context.setAttribute("conflictVar", "來自 Application 的衝突變數");
 
-        return "learning/scopes";
+        return "scopes";
     }
 }

@@ -35,6 +35,6 @@ public class JstlController {
         model.addAttribute("isLoggedIn", true);
         model.addAttribute("accountBalance", 15000);
 
-        return "learning/jstl";
+        return "jstl";
     }
 }

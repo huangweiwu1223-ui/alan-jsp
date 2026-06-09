@@ -1,4 +1,18 @@
 {
+  // 1. 把 jsp 當作 html 處理（恢復語法高亮的顏色）
+  "files.associations": {
+    "*.jsp": "html"
+  },
+
+  // 2. 針對 html，不要用 Prettier，改用 VS Code 內建的 Formatter
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true
+  },
+
+  // 3. 確保內建 Formatter 會略過 <% %> 標籤（通常預設就是 true）
+  "html.format.templating": true,
+
   "files.exclude": {
     "**/.git": true,
     "**/.settings": true,
