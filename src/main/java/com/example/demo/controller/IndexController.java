@@ -16,13 +16,6 @@ public class IndexController {
      */
     @GetMapping({ "/", "/index" })
     public String index(Model model) {
-        // 模擬從資料庫取得的清單資料 (保留原有邏輯，但改用於 welcome.jsp)
-        List<String> items = Arrays.asList("Spring Boot", "JSP", "JSTL", "EL", "jQuery AJAX");
-
-        model.addAttribute("courseName", "JSP 兩日極速實戰");
-        model.addAttribute("items", items);
-        model.addAttribute("isUserLoggedIn", true);
-
         return "index";
     }
 
