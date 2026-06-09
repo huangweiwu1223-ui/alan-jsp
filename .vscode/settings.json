@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.settings": true,
+    "**/.project": true,
+    "**/.gitattributes": true,
+    "**/.mvn": true,
+    "**/target": true,
+    "**/mvnw.cmd": true
+  }
+}
