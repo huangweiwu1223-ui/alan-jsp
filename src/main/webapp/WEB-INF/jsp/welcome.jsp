@@ -1,6 +1,6 @@
-<%-- /data/data/com.termux/files/home/alan-jsp/src/main/webapp/WEB-INF/jsp/welcome.jsp --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <!DOCTYPE html>
 <html>
 
@@ -120,6 +120,9 @@
     </div>
 
     <p>目前系統時間: <%= new java.util.Date() %></p>
+    <p>目前系統時間 (使用fmt:formatDate):
+        <fmt:formatDate value="<%= new java.util.Date() %>" pattern="yyyyMMdd HH:mm:ss" timeZone="Asia/Taipei" />
+    </p>
 
     <script>
         $(document).ready(function () {
