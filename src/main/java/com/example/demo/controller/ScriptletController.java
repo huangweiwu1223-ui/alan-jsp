@@ -10,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.model.Customer;
+import com.example.demo.model.Policy;
+
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
@@ -45,20 +48,19 @@ public class ScriptletController {
         request.setAttribute("serverTag", "Prod-Server-01");
 
         // 4. 準備 Policy 物件清單 (供 JSP Scriptlet 練習用，不用 Map)
+
         List<Policy> policies = Arrays.asList(
                 new Policy("P001", "壽險", 1_000_000),
                 new Policy("P002", "意外險", 500_000),
                 new Policy("P003", "醫療險", 200_000),
-                new Policy("P004", "壽險", 3_000_000)
-        );
+                new Policy("P004", "壽險", 3_000_000));
         model.addAttribute("policies", policies);
 
         // 5. 準備 Customer 物件清單
         List<Customer> customers = Arrays.asList(
                 new Customer("李大仁", 35, 36_000.0),
                 new Customer("程又青", 30, 28_000.0),
-                new Customer("丁立威", 40, 45_000.0)
-        );
+                new Customer("丁立威", 40, 45_000.0));
         model.addAttribute("customers", customers);
 
         // 6. 準備空清單，示範無資料處理
@@ -73,36 +75,4 @@ public class ScriptletController {
         return "admin_mock"; // 需另建 admin_mock.jsp，或僅觀察 URL 變化
     }
 
-    // ---------- 內部靜態類別，用於 Scriptlet 物件清單練習 ----------
-    public static class Policy {
-        private String policyNumber;
-        private String type;
-        private int sumInsured; // 保額
-
-        public Policy(String policyNumber, String type, int sumInsured) {
-            this.policyNumber = policyNumber;
-            this.type = type;
-            this.sumInsured = sumInsured;
-        }
-
-        public String getPolicyNumber() { return policyNumber; }
-        public String getType() { return type; }
-        public int getSumInsured() { return sumInsured; }
-    }
-
-    public static class Customer {
-        private String name;
-        private int age;
-        private double premium; // 年繳保費
-
-        public Customer(String name, int age, double premium) {
-            this.name = name;
-            this.age = age;
-            this.premium = premium;
-        }
-
-        public String getName() { return name; }
-        public int getAge() { return age; }
-        public double getPremium() { return premium; }
-    }
 }
