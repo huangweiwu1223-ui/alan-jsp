@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.example.demo.controller.ScriptletController.Policy, com.example.demo.controller.ScriptletController.Customer" %>
+<%@ page import="com.example.demo.model.*" %>
 <%-- 設定錯誤處理頁面 --%>
 <%@ page errorPage="error.jsp" %>
 <!DOCTYPE html>
