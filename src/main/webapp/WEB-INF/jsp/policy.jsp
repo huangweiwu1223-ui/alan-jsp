@@ -1,3 +1,4 @@
+<%-- /data/data/com.termux/files/home/alan-jsp/src/main/webapp/WEB-INF/jsp/policy.jsp --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -63,9 +64,15 @@
         /* 查詢卡片排版優化 */
         .search-form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             margin-bottom: 15px;
+        }
+
+        @media (max-width: 992px) {
+            .search-form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .search-form-grid div {
