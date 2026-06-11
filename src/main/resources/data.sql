@@ -1,5 +1,3 @@
--- /data/data/com.termux/files/home/alan-jsp/src/main/resources/data.sql
-
 -- 插入 10 筆客戶
 INSERT INTO customers (name, age, premium, email, phone, address, gender, birth_date, occupation, id_number, marital_status) VALUES
 ('張小明', 30, 5000.0, 'ming@test.com', '0912-345-678', '台北市信義路', 'Male', '1994-01-01', 'Engineer', 'A123456789', 'Single'),
