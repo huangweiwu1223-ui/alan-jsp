@@ -58,9 +58,9 @@ public class ScriptletController {
 
         // 5. 準備 Customer 物件清單
         List<Customer> customers = Arrays.asList(
-                new Customer("李大仁", 35, 36_000.0),
-                new Customer("程又青", 30, 28_000.0),
-                new Customer("丁立威", 40, 45_000.0));
+                new Customer(1L, "李大仁", 35, 36_000.0),
+                new Customer(2L, "程又青", 30, 28_000.0),
+                new Customer(3L, "丁立威", 40, 45_000.0));
         model.addAttribute("customers", customers);
 
         // 6. 準備空清單，示範無資料處理
@@ -108,9 +108,9 @@ public class ScriptletController {
 
         // 5. 準備 Customer 物件清單
         List<Customer> customers = Arrays.asList(
-                new Customer("李大仁", 35, 36_000.0),
-                new Customer("程又青", 30, 28_000.0),
-                new Customer("丁立威", 40, 45_000.0));
+                new Customer(1L, "李大仁", 35, 36_000.0),
+                new Customer(2L, "程又青", 30, 28_000.0),
+                new Customer(3L, "丁立威", 40, 45_000.0));
         model.addAttribute("customers", customers);
 
         // 6. 準備空清單，示範無資料處理
