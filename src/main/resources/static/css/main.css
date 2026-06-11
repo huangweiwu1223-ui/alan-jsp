@@ -24,6 +24,14 @@ html, body {
     padding: 20px 0;
     overflow-y: auto;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: width 0.3s ease;
+    flex-shrink: 0;
+}
+
+.sidebar.collapsed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .sidebar h2 {
@@ -32,37 +40,66 @@ html, body {
     font-size: 1.5rem;
     border-bottom: 1px solid #34495e;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .sidebar h3 {
-    padding: 10px 20px 5px;
-    font-size: 1.1rem;
+    padding: 12px 20px;
+    font-size: 1rem;
     color: #f1c40f;
-    margin-top: 15px;
+    cursor: pointer;
+    background-color: #34495e;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.sidebar h3:hover {
+    background-color: #3d566e;
+}
+
+.sidebar h3::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+.sidebar h3.collapsed::after {
+    transform: rotate(-90deg);
 }
 
 .sidebar ul {
     list-style: none;
     padding-left: 0;
+    max-height: 1000px; /* 展開高度 */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.sidebar ul.collapsed {
+    max-height: 0;
 }
 
 .sidebar li {
-    margin: 5px 0;
+    margin: 0;
 }
 
 .sidebar a {
     display: block;
-    padding: 8px 20px 8px 30px;
+    padding: 10px 20px 10px 40px;
     color: #ecf0f1;
     text-decoration: none;
+    font-size: 0.9rem;
     transition: all 0.2s ease;
     border-left: 3px solid transparent;
 }
 
 .sidebar a:hover {
-    background-color: #34495e;
+    background-color: #3e5871;
     border-left-color: #f1c40f;
-    padding-left: 35px;
+    padding-left: 45px;
 }
 
 /* 右側內容區域 */
@@ -70,10 +107,24 @@ html, body {
     flex: 1;
     background-color: #fff;
     overflow: hidden;
+    position: relative;
 }
 
 .content-area iframe {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
 }

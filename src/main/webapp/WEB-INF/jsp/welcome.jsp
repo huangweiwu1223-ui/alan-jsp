@@ -119,6 +119,12 @@
         <p>核心筆記載入中...</p>
     </div>
 
+    <!-- 固定顯示的內容區塊 -->
+    <h3 class="section-title">JSP + EL + JSTL 核心知識點 50 題測驗與解答</h3>
+    <div id="fixed-quiz-content" class="course-box markdown-body">
+        <p>核心筆記載入中...</p>
+    </div>
+
     <p>目前系統時間: <%= new java.util.Date() %></p>
     <p>目前系統時間 (使用fmt:formatDate):
         <fmt:formatDate value="<%= new java.util.Date() %>" pattern="yyyyMMdd HH:mm:ss" timeZone="Asia/Taipei" />
@@ -176,6 +182,7 @@
 
             // 固定加載 jsp.md 到下方區塊
             loadMarkdownContent('jsp', '#fixed-jsp-content');
+            loadMarkdownContent('quiz', '#fixed-quiz-content');
 
             // 事件綁定
             $('#loadBtn').click(function () {

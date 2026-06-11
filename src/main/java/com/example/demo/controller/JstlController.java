@@ -10,52 +10,94 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/learning/jsp")
+@RequestMapping("/learning/jsp/jstl")
 public class JstlController {
 
-    @GetMapping("/jstl/core")
-    public String jstlCore(Model model) {
-        // 核心標籤入門所需資料
-        model.addAttribute("userRole", "ADMIN");
+    // 1. forEach
+    @GetMapping("/forEach")
+    public String forEach(Model model) {
+        List<Map<String, Object>> advList = new ArrayList<>();
+        advList.add(Map.of("id", "P001", "name", "超值壽險", "price", 5000));
+        advList.add(Map.of("id", "P002", "name", "高端醫療", "price", 12000));
+        model.addAttribute("advList", advList);
+        return "jstl_forEach";
+    }
+
+    // 2. if
+    @GetMapping("/if")
+    public String jstlIf(Model model) {
         model.addAttribute("isLoggedIn", true);
         model.addAttribute("accountBalance", 15000);
+        return "jstl_if";
+    }
 
-        // 用於 c:out 展示 XSS 防護的字串
-        model.addAttribute("unsafeContent", "<script>alert('XSS')</script><b>安全文字</b>");
-
-        // 練習用分數
+    // 3. choose
+    @GetMapping("/choose")
+    public String jstlChoose(Model model) {
+        model.addAttribute("userRole", "ADMIN");
         model.addAttribute("practiceScore", 85);
-
-        return "jstl_core";
+        return "jstl_choose_when_otherwise";
     }
 
-    @GetMapping("/jstl/iteration")
-    public String jstlIteration(Model model) {
-        // 進階迭代所需資料
-        List<Map<String, Object>> advancedPolicies = new ArrayList<>();
-        advancedPolicies.add(Map.of("id", "P001", "name", "超值壽險", "price", 5000, "active", true));
-        advancedPolicies.add(Map.of("id", "P002", "name", "高端醫療", "price", 12000, "active", true));
-        advancedPolicies.add(Map.of("id", "P003", "name", "過期保單", "price", 2000, "active", false));
-        advancedPolicies.add(Map.of("id", "P004", "name", "微型保險", "price", 500, "active", true));
-        model.addAttribute("advList", advancedPolicies);
-
-        model.addAttribute("csvTags", "壽險,醫療,意外,儲蓄,投資,防疫");
-
-        List<Integer> scores = List.of(90, 85, 77, 92, 60, 45, 88);
-        model.addAttribute("scoreList", scores);
-
-        return "jstl_iteration";
+    // 4. out
+    @GetMapping("/out")
+    public String jstlOut(Model model) {
+        model.addAttribute("unsafeContent", "<script>alert('XSS')</script><b>安全文字</b>");
+        return "jstl_out";
     }
 
-    @GetMapping("/jstl/url")
-    public String jstlUrl(Model model) {
-        // URL 處理頁面不需要特殊資料，可動態展示
+    // 5. set
+    @GetMapping("/set")
+    public String jstlSet() {
+        return "jstl_set";
+    }
+
+    // 6. url
+    @GetMapping("/url")
+    public String jstlUrl() {
         return "jstl_url";
     }
 
-    @GetMapping("/jstl/ajax")
-    public String jstlAjax(Model model) {
-        // AJAX 頁面可直接使用後端 API，不需 Model 資料
+    // 7. param
+    @GetMapping("/param")
+    public String jstlParam() {
+        return "jstl_param";
+    }
+
+    // 8. remove
+    @GetMapping("/remove")
+    public String jstlRemove(Model model) {
+        model.addAttribute("tempMsg", "這是一次性訊息");
+        return "jstl_remove";
+    }
+
+    // 9. import
+    @GetMapping("/import")
+    public String jstlImport() {
+        return "jstl_import";
+    }
+
+    // 10. redirect
+    @GetMapping("/redirect")
+    public String jstlRedirect() {
+        return "jstl_redirect";
+    }
+
+    // 11. catch
+    @GetMapping("/catch")
+    public String jstlCatch() {
+        return "jstl_catch";
+    }
+
+    // 12. forTokens
+    @GetMapping("/forTokens")
+    public String jstlForTokens(Model model) {
+        model.addAttribute("csvTags", "壽險,醫療,意外,儲蓄,投資");
+        return "jstl_forTokens";
+    }
+
+    @GetMapping("/ajax")
+    public String jstlAjax() {
         return "jstl_ajax";
     }
 }
