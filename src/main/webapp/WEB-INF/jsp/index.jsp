@@ -74,6 +74,9 @@
               onclick="loadCourse('${pageContext.request.contextPath}/customer')">客戶查詢結果分頁實戰(使用JSTL)</a>
           </li>
           <li><a href="javascript:void(0)"
+              onclick="loadCourse('${pageContext.request.contextPath}/policy')">保單查詢結果分頁實戰(使用JSTL)</a>
+          </li>
+          <li><a href="javascript:void(0)"
               onclick="loadCourse('${pageContext.request.contextPath}/jasperReport')">報表</a></li>
         </ul>
       </nav>
